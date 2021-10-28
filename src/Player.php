@@ -26,6 +26,10 @@ class Player
     public function hit() {
         array_push($this -> cards, $this -> deck -> drawCard());
 
+        if ($this -> getScore() > self::BJ) $this -> lost = true;
+        else $this -> lost = false;
+
+        return $this -> cards;
     }
 
     public function surrender() {
