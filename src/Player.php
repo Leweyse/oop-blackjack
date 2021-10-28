@@ -53,6 +53,6 @@ class Player
     }
 
     public function hasLost() {
-
+        return $this -> lost;
     }
 }
