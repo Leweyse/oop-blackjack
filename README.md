@@ -42,9 +42,13 @@ First dive into OOP (Object Oriented Programming). Let's make a game in PHP: Bla
 - [x] Create Blackjack Class.
 - [ ] Create Dealer Class.
 - [ ] Add the logic in empty Player methods.
+    - [x] Player Class.
+    - [x] Blackjack Class.
+    - [ ] Dealer Class
 - [ ] index.php 
-    - [ ] Require all the files with the classes.
-    - [ ] Start the PHP session.
+    - [x] Require all the files with the classes.
+    - [x] Start the PHP session.
     - [ ] Use buttons or links to send to the index.php page what the player's action is (i.e. hit/stand/surrender).
+        <i>Note: Functions display just once at the moment.</i>
 - [ ] Implement a betting system.
 - [ ] Implement the blackjack first turn rule.
