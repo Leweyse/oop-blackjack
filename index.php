@@ -17,6 +17,25 @@ $deck->shuffle();
 // }
 
 $player = new Player($deck);
-echo $player -> getScore();
+$dealer = new Player($deck);
+
+if (!isset($_SESSION['Blackjack'])) {
+    $blackjack = new Blackjack($player, $dealer, $deck);
+    $_SESSION['Blackjack'] = $blackjack;
+}
+
+if (isset($_GET['state'])) {
+    if ($_GET['state'] == 'hit') {
+        $player -> hit();
+    }
+
+    if ($_GET['state'] == 'surrender') {
+        $player -> surrender();
+    }
+
+    if ($_GET['state'] == 'stand') {
+        echo "stand";
+    }
+}
 
 require 'indexTemplate.php';
