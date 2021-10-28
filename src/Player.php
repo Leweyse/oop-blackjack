@@ -33,7 +33,7 @@ class Player
     }
 
     public function surrender() {
-
+        $this -> lost = true;
     }
 
     public function getScore() {
