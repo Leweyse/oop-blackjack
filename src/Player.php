@@ -14,8 +14,9 @@ class Player
         global $cards;
         global $lost;
 
-        $cards[] = $deck -> drawCard();
-        $cards[] = $deck -> drawCard();
+        for ($i=0; $i < self::START_CARDS; $i++) {
+            $cards[] = $deck -> drawCard();
+        }
 
         $this -> cards = $cards;
         $this -> lost = $lost;
