@@ -10,7 +10,11 @@ require 'src/Blackjack.php';
 
 $deck = new Deck();
 $deck->shuffle();
-foreach($deck->getCards() AS $card) {
-    echo $card->getUnicodeCharacter(true);
-    echo '<br>';
-}
+// foreach($deck->getCards() AS $card) {
+//     echo $card->getUnicodeCharacter(true);
+// }
+
+$player = new Player($deck);
+echo $player -> getScore();
+
+require 'indexTemplate.php';
