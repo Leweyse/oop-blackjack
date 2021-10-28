@@ -6,6 +6,9 @@ class Player
     private $cards = [];
     private $lost = false;
 
+    private const BJ = 21;
+    private const START_CARDS = 2;
+
     public function __construct(Deck $deck)
     {
         global $cards;
