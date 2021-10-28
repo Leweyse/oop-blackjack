@@ -11,7 +11,10 @@ class Blackjack
     {
         $deck = new Deck();
         $deck -> shuffle();
-        
+
+        $player = new Player($deck);
+        $dealer = new Player($deck);
+
         $this -> player = $player;
         $this -> dealer = $dealer;
         $this -> deck = $deck;
