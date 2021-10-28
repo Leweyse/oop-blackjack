@@ -7,4 +7,9 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Blackjack</title>
 </head>
+<body>
+    <a href="?state=hit" class="state">Hit</a>
+    <a href="?state=stand" class="state">Stand</a>
+    <a href="?state=surrender" class="state">Surrender</a>
+</body>
 </html>
