@@ -20,9 +20,11 @@ class Player
 
         $this -> cards = $cards;
         $this -> lost = $lost;
+        $this -> deck = $deck;
     }
 
     public function hit() {
+        array_push($this -> cards, $this -> deck -> drawCard());
 
     }
 
