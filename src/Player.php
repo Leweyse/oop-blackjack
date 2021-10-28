@@ -11,11 +11,11 @@ class Player
         global $cards;
         global $lost;
 
-        $deck -> drawCard();
+        $cards[] = $deck -> drawCard();
+        $cards[] = $deck -> drawCard();
 
         $this -> cards = $cards;
         $this -> lost = $lost;
-        $this -> deck = $deck;
     }
 
     public function hit() {
