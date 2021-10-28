@@ -11,11 +11,11 @@ class Player
         global $cards;
         global $lost;
 
-        $deck -> drawCard();
+        $cards[] = $deck -> drawCard();
+        $cards[] = $deck -> drawCard();
 
         $this -> cards = $cards;
         $this -> lost = $lost;
-        $this -> deck = $deck;
     }
 
     public function hit() {
@@ -27,7 +27,19 @@ class Player
     }
 
     public function getScore() {
+        $cards = $this -> cards;
+        $cardsValue = [];
 
+        foreach ($cards as $key) {
+            array_push($cardsValue, $key -> getValue());
+        }
+
+        $score = array_reduce($cardsValue, function ($carry, $value) {
+            $carry += $value;
+            return $carry;
+        });
+
+        return $score;
     }
 
     public function hasLost() {
