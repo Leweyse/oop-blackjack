@@ -32,17 +32,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
     checkMethod($game, $player, $dealer, $playerScore, $dealerScore);
 }
 
-if (($player -> hasLost())) {
-    echo "Player have lost!";
-    echo "Destroy Blackjack variable";
-}
-
-if (($dealer -> hasLost())) {
-    echo "dealer have lost!";
-    echo "Destroy Blackjack variable";
-
-    unset($_SESSION['Blackjack']);
-}
+require 'public/view.php';
 
 if ($game != null) {
     echo "<main>";
