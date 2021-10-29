@@ -8,8 +8,10 @@
     <title>Blackjack</title>
 </head>
 <body>
-    <a href="?state=hit" class="state">Hit</a>
-    <a href="?state=stand" class="state">Stand</a>
-    <a href="?state=surrender" class="state">Surrender</a>
+    <form method="post">
+        <input type="submit" name="hit" value="Hit">
+        <input type="submit" name="stand" value="Stand">
+        <input type="submit" name="surrender" value="Surrender">
+    </form>
 </body>
 </html>
