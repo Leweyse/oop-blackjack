@@ -12,6 +12,6 @@ class Dealer extends Player
     */
 
     public function hit(Deck $deck) : void {
-        if ($this -> getScore() < self::MIN_DEALER) parent::hit($deck);
+        while ($this -> getScore() <= self::MIN_DEALER) parent::hit($deck);
     }
 }
