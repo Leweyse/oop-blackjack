@@ -4,7 +4,7 @@ declare(strict_types=1);
 class Blackjack
 {
     private Player $player;
-    private Player $dealer;
+    private Dealer $dealer;
     private Deck $deck;
 
     public function __construct(Player $player, Player $dealer, Deck $deck)
@@ -12,12 +12,8 @@ class Blackjack
         $deck = new Deck();
         $deck -> shuffle();
 
-        $player = new Player($deck);
-        $dealer = new Player($deck);
-
-        $this -> player = $player;
-        $this -> dealer = $dealer;
-        $this -> deck = $deck;
+        $this -> player = new Player($this -> deck);
+        $this -> dealer = new Dealer($this -> deck);
     }
 
     public function getPlayer() : Player
@@ -25,7 +21,7 @@ class Blackjack
         return $this -> player;
     }
 
-    public function getDealer() : Player
+    public function getDealer() : Dealer
     {
         return $this -> dealer;
     }
