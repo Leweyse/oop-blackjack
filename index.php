@@ -24,6 +24,7 @@ include "sections/form.section.php";
 
 $game = $player = $dealer = null;
 $playerScore = $dealerScore = 0;
+$disabled = false;
 
 setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
 
