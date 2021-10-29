@@ -48,6 +48,7 @@ First dive into OOP (Object Oriented Programming). Let's make a game in PHP: Bla
     - [x] Start the PHP session.
     - [x] Use buttons or links to send to the index.php page what the player's action is (i.e. hit/stand/surrender).
         - [x] Fix stand button.
-- [ ] Fixed style for buttons.
+- [ ] Fix style for buttons.
+- [ ] Create messages components (wins or loses).
 - [ ] Implement a betting system.
 - [ ] Implement the blackjack first turn rule.
