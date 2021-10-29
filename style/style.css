@@ -10,8 +10,17 @@
     --ff-universal: 'Comfortaa';
 }
 
-a {
-    padding: 2rem;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--ff-universal);
+}
+
+::selection {
+    color: var(--clr-black);
+    background: var(--clr-green);
 }
 
 span {
