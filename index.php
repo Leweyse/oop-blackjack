@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-session_start();
-
 require 'src/Suit.php';
 require 'src/Card.php';
 require 'src/Deck.php';
@@ -10,16 +8,8 @@ require 'src/Deck.php';
 require 'src/Player.php';
 require 'src/Blackjack.php';
 
-function whatIsHappening() {
-    echo '<h2>$_GET</h2>';
-    var_dump($_GET);
-    echo '<h2>$_POST</h2>';
-    var_dump($_POST);
-    echo '<h2>$_COOKIE</h2>';
-    var_dump($_COOKIE);
-    echo '<h2>$_SESSION</h2>';
-    var_dump($_SESSION);
-}
+//  including the class before calling session_start();
+session_start();
 
 $deck = new Deck();
 $deck->shuffle();
