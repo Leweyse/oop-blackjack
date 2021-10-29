@@ -7,10 +7,10 @@ class Blackjack
     private Dealer $dealer;
     private Deck $deck;
 
-    public function __construct(Player $player, Player $dealer, Deck $deck)
+    public function __construct()
     {
-        $deck = new Deck();
-        $deck -> shuffle();
+        $this -> deck = new Deck();
+        $this -> deck -> shuffle();
 
         $this -> player = new Player($this -> deck);
         $this -> dealer = new Dealer($this -> deck);
