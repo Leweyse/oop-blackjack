@@ -6,6 +6,7 @@ require 'src/Card.php';
 require 'src/Deck.php';
 
 require 'src/Player.php';
+require 'src/Dealer.php';
 require 'src/Blackjack.php';
 
 //  including the class before calling session_start();
@@ -17,8 +18,8 @@ $deck->shuffle();
 //     echo $card->getUnicodeCharacter(true);
 // }
 
-$player = new Player($deck);
-$dealer = new Player($deck);
+$game = $player = $dealer = null;
+$playerScore = $dealerScore = 0;
 
 if (!isset($_SESSION['Blackjack'])) {
     $blackjack = new Blackjack($player, $dealer, $deck);
@@ -34,9 +35,11 @@ if (isset($_GET['state'])) {
         $player -> surrender();
     }
 
-    if ($_GET['state'] == 'stand') {
-        echo "stand";
-    }
+if (($dealer -> hasLost())) {
+    echo "dealer have lost!";
+    echo "Destroy Blackjack variable";
+
+    unset($_SESSION['Blackjack']);
 }
 
 require 'indexTemplate.php';
