@@ -1,5 +1,13 @@
-*:not(span) {
-    font-size: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+:root {
+    --clr-black: #04080F;
+    --clr-white: #DBD5B5;
+    --clr-red: #F8333C;
+
+    --clr-green: #88D498;
+
+    --ff-universal: 'Comfortaa';
 }
 
 a {
