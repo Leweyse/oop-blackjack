@@ -12,11 +12,7 @@ require 'src/Blackjack.php';
 //  including the class before calling session_start();
 session_start();
 
-$deck = new Deck();
-$deck->shuffle();
-// foreach($deck->getCards() AS $card) {
-//     echo $card->getUnicodeCharacter(true);
-// }
+include "helpers/checkMethod.php";
 
 $game = $player = $dealer = null;
 $playerScore = $dealerScore = 0;
@@ -26,14 +22,14 @@ if (!isset($_SESSION['Blackjack'])) {
     $_SESSION['Blackjack'] = $blackjack;
 }
 
-if (isset($_GET['state'])) {
-    if ($_GET['state'] == 'hit') {
-        $player -> hit();
-    }
+if($_SERVER['REQUEST_METHOD']=='POST') {
+    checkMethod($game, $player, $dealer, $playerScore, $dealerScore);
+}
 
-    if ($_GET['state'] == 'surrender') {
-        $player -> surrender();
-    }
+if (($player -> hasLost())) {
+    echo "Player have lost!";
+    echo "Destroy Blackjack variable";
+}
 
 if (($dealer -> hasLost())) {
     echo "dealer have lost!";
