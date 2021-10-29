@@ -45,4 +45,9 @@ if (($dealer -> hasLost())) {
     unset($_SESSION['Blackjack']);
 }
 
+echo $playerScore;
+$player -> displayCards();
+echo $dealerScore;
+$dealer -> displayCards();
+
 require 'indexTemplate.php';
