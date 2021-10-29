@@ -41,7 +41,7 @@ class Player
         return $score;
     }
 
-    public function hasLost() {
+    public function hasLost() : bool {
         return $this -> lost;
     }
 }
