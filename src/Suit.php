@@ -39,7 +39,7 @@ class Suit
 
     public function getColor() : string
     {
-        return in_array($this->name, [self::TYPE_HEART, self::TYPE_DIAMOND]) ? 'red' : 'black';
+        return in_array($this->name, [self::TYPE_HEART, self::TYPE_DIAMOND]) ? '#F8333C' : '#DBD5B5';
     }
 
     public function getStartValue() : int
