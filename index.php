@@ -18,8 +18,15 @@ $game = $player = $dealer = null;
 $playerScore = $dealerScore = 0;
 
 if (!isset($_SESSION['Blackjack'])) {
-    $blackjack = new Blackjack($player, $dealer, $deck);
+    $blackjack = new Blackjack();
     $_SESSION['Blackjack'] = $blackjack;
+} else {
+    $game = $_SESSION["Blackjack"];
+    $player = $game -> getPlayer();
+    $dealer = $game -> getDealer();
+
+    $playerScore = $player -> getScore();
+    $dealerScore = $dealer -> getScore();
 }
 
 if($_SERVER['REQUEST_METHOD']=='POST') {
