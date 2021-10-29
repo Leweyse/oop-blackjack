@@ -14,18 +14,21 @@ class Player
         for ($i=0; $i < self::START_CARDS; $i++) $this -> cards[] = $deck -> drawCard();
     }
 
-    public function hit(Deck $deck) : void {
+    public function hit(Deck $deck) : void
+    {
         $this -> cards[] = $deck -> drawCard();
 
         if ($this -> getScore() > self::BJ) $this -> lost = true;
         else $this -> lost = false;
     }
 
-    public function surrender() : void {
+    public function surrender() : void
+    {
         $this -> lost = true;
     }
 
-    public function getScore() : int {
+    public function getScore() : int
+    {
         $cards = $this -> cards;
         $cardsValue = [];
 
@@ -41,7 +44,8 @@ class Player
         return $score;
     }
 
-    public function hasLost() : bool {
+    public function hasLost() : bool
+    {
         return $this -> lost;
     }
 
