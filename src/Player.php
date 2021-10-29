@@ -49,9 +49,8 @@ class Player
         return $this -> lost;
     }
 
-    public function displayCards() {
-        foreach($this -> cards as $card) {
-            echo $card->getUnicodeCharacter(true);
-        }
+    public function getCards() : array
+    {
+        return $this -> cards;
     }
 }
