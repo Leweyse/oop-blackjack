@@ -44,4 +44,10 @@ class Player
     public function hasLost() : bool {
         return $this -> lost;
     }
+
+    public function displayCards() {
+        foreach($this -> cards as $card) {
+            echo $card->getUnicodeCharacter(true);
+        }
+    }
 }
