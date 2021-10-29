@@ -25,17 +25,7 @@ include "sections/form.section.php";
 $game = $player = $dealer = null;
 $playerScore = $dealerScore = 0;
 
-if (!isset($_SESSION['Blackjack'])) {
-    $blackjack = new Blackjack();
-    $_SESSION['Blackjack'] = $blackjack;
-} else {
-    $game = $_SESSION["Blackjack"];
-    $player = $game -> getPlayer();
-    $dealer = $game -> getDealer();
-
-    $playerScore = $player -> getScore();
-    $dealerScore = $dealer -> getScore();
-}
+setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
 
 if($_SERVER['REQUEST_METHOD']=='POST') {
     checkMethod($game, $player, $dealer, $playerScore, $dealerScore);
@@ -53,9 +43,11 @@ if (($dealer -> hasLost())) {
     unset($_SESSION['Blackjack']);
 }
 
-echo $playerScore;
-$player -> displayCards();
-echo $dealerScore;
-$dealer -> displayCards();
+if ($game != null) {
+    echo "<main>";
+    playerComponent($player, $playerScore);
+    playerComponent($dealer, $dealerScore);
 
-require 'indexTemplate.php';
+    formComponent($disabled);
+    echo "</main>";
+}
