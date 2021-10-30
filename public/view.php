@@ -8,6 +8,22 @@
     <title>Blackjack</title>
 </head>
 <body>
-    
+    <aside class="status">
+        <?php
+            echo "<p>$status</p>";
+        ?>
+    </aside>
+    <main>
+        <?php
+            if ($game != null) {
+                playerComponent($player, $playerScore);
+                playerComponent($dealer, $dealerScore);
+
+                formComponent($disabled);
+            } else {
+                formComponent(true);
+            }
+        ?>
+    </main>
 </body>
 </html>

@@ -24,6 +24,7 @@ include "sections/form.section.php";
 
 $game = $player = $dealer = null;
 $playerScore = $dealerScore = 0;
+$status = "Let's start!";
 $disabled = false;
 
 setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
@@ -33,12 +34,3 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 }
 
 require 'public/view.php';
-
-if ($game != null) {
-    echo "<main>";
-    playerComponent($player, $playerScore);
-    playerComponent($dealer, $dealerScore);
-
-    formComponent($disabled);
-    echo "</main>";
-}
