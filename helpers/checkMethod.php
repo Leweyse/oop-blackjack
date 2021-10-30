@@ -10,6 +10,15 @@ function checkMethod(&$game, &$player, &$dealer, &$playerScore, &$dealerScore) {
             $player -> hit($game -> getDeck());
             $playerScore = $player -> getScore();
 
+            if ($player -> getScore()  == 21) {
+                $status = "You win!";
+
+                $disabled = true;
+
+                unset($_SESSION['Blackjack']);
+                setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
+            }
+
             if ($player -> hasLost()) {
                 $status = "You lose!";
 
@@ -61,12 +70,33 @@ function checkMethod(&$game, &$player, &$dealer, &$playerScore, &$dealerScore) {
 
         if (isset($_POST['surrender'])) {
             $player -> surrender();
-            echo "You lose";
+            $status = "You lose";
 
             $disabled = true;
 
             unset($_SESSION['Blackjack']);
             setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
+        }
+
+        if (isset($_POST['newGame'])) {
+            if ($player -> getScore()  == 21 || $dealer -> getScore() > 21) {
+                $status = "You win!";
+
+                $disabled = true;
+
+                unset($_SESSION['Blackjack']);
+                setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
+            }
+
+            if ($dealer -> getScore() == 21 || $player -> getScore()  > 21) {
+                $status = "You lose!";
+
+                $disabled = true;
+
+                unset($_SESSION['Blackjack']);
+                setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
+
+            }
         }
     }
 }
