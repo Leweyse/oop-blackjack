@@ -1,7 +1,8 @@
-<?php 
+<?php
 declare(strict_types=1);
 
 function checkMethod(&$game, &$player, &$dealer, &$playerScore, &$dealerScore) {
+    global $status;
     global $disabled;
 
     if ($game != null) {
@@ -10,7 +11,7 @@ function checkMethod(&$game, &$player, &$dealer, &$playerScore, &$dealerScore) {
             $playerScore = $player -> getScore();
 
             if ($player -> hasLost()) {
-                echo "Player loses!";
+                $status = "You lose!";
 
                 $disabled = true;
 
@@ -24,7 +25,7 @@ function checkMethod(&$game, &$player, &$dealer, &$playerScore, &$dealerScore) {
             $dealerScore = $dealer -> getScore();
 
             if ($dealer -> hasLost()) {
-                echo "Dealer loses!";
+                $status = "You win!";
 
                 $disabled = true;
 
@@ -32,7 +33,7 @@ function checkMethod(&$game, &$player, &$dealer, &$playerScore, &$dealerScore) {
                 setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
 
             } elseif ($playerScore > $dealerScore) {
-                echo "You win!";
+                $status = "You win!";
 
                 $disabled = true;
 
@@ -40,7 +41,7 @@ function checkMethod(&$game, &$player, &$dealer, &$playerScore, &$dealerScore) {
                 setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
 
             } elseif ($playerScore < $dealerScore) {
-                echo "Dealer wins!";
+                $status = "You lose!";
 
                 $disabled = true;
 
@@ -48,7 +49,7 @@ function checkMethod(&$game, &$player, &$dealer, &$playerScore, &$dealerScore) {
                 setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
 
             } else {
-                echo "You and Dealer wins!";
+                $status = "Draw!";
 
                 $disabled = true;
 
