@@ -1,10 +1,18 @@
+# Title: OOP: Blackjack Game
 ### PHP Exercise 28/10/2021 - 29/10/2021
 <br/>
 
-# Title: OOP: Blackjack Game
+## Description
+First dive into OOP (Object Oriented Programming).
+<br/>
+<br/>
 
 ## The Mission
-First dive into OOP (Object Oriented Programming). Let's make a game in PHP: Blackjack! A game of chance and luck!
+Let's make a game in PHP: Blackjack! A game of chance and luck!
+
+<br/>
+<img src="assets/preview.png" width="100%">
+<br/><br/>
 
 ## Blackjack Rules
 - Cards are between 1-11 points.
@@ -25,18 +33,8 @@ First dive into OOP (Object Oriented Programming). Let's make a game in PHP: Bla
   - At the end display the winner.
 
 <br/>
-    
-# Nice to have
-- Implement a betting system
-    - Every new player (new session) starts with 100 chips.
-    - After the player gets his 2 first cards every round ask how much he wants to bet. He needs to bet at least 5 chips. 
-     - If the player wins the bet he gains double the amount of chips.
-- Implement the blackjack first turn rule: if the player draws 21 the first turn: he directly wins. If the dealer draws 21 the first turn, he wins. If both draw it, it is a tie. 
-    - When you implement both nice to have features, a blackjack means an auto win of 10 chips, a blackjack of the dealer a loss of 5 chips for the player.
 
-<br/>
-
-# To Do
+## To Do
 
 - [x] Create Player Class.
 - [x] Create Blackjack Class.
