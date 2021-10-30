@@ -6,6 +6,6 @@ function formComponent($disabled) {
     inputComponent($disabled, 'hit', 'Hit');
     inputComponent($disabled, 'stand', 'Stand');
     inputComponent($disabled, 'surrender', 'Surrender');
-    inputComponent(false, 'newGame', 'New Game');
+    inputComponent(!$disabled, 'newGame', 'New Game');
     echo "</form>";
 }
