@@ -13,6 +13,7 @@ require 'src/Blackjack.php';
 session_start();
 
 include "helpers/setBlackjack.php";
+include "helpers/unsetSession.php";
 include "helpers/checkMethod.php";
 
 include "components/score.component.php";
@@ -27,10 +28,10 @@ $playerScore = $dealerScore = 0;
 $status = "Let's start!";
 $disabled = false;
 
-setBlackjack($game, $player, $dealer, $playerScore, $dealerScore);
+setBlackjack();
 
 if($_SERVER['REQUEST_METHOD']=='POST') {
-    checkMethod($game, $player, $dealer, $playerScore, $dealerScore);
+    checkMethod();
 }
 
 require 'public/view.php';
