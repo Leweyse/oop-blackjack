@@ -96,6 +96,14 @@ form input {
 
     border: var(--clr-green) outset 5px;
     border-radius: 3px;
+
+    cursor: pointer;
+
+    transition: background 0.3s;
+}
+
+form input:hover {
+    background: #88d49815;
 }
 
 form input:active {
