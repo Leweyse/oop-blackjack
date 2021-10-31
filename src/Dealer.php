@@ -5,6 +5,11 @@ class Dealer extends Player
 {
     private const MIN_DEALER = 15;
 
+    public function __construct(Deck $deck)
+    {
+        $this -> cards[] = $deck -> drawCard();
+    }
+
     /* 
     parent allows access to the inherited class, 
     whereas self is a reference to the class the method running (static or otherwise) belongs to.
